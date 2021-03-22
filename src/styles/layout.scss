@@ -1,0 +1,20 @@
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#content {
+	position: absolute;
+	top: 0;
+	left: 260px;
+	height: 100%;
+	width: calc(100% - 260px);
+}
+
+#background {
+	position: fixed;
+	top: 0;
+	left: 260px;
+	width: calc(100% - 260px);
+}
