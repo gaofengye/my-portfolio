@@ -5,13 +5,18 @@ export const Sidebar: FunctionComponent = () => {
     const [activePageIndex, setActivePageIndex] = useState(0);
 
     const goToHome = () => {
+        window.location.href = "/";
     }
 
-    const scrollTo = (e: React.MouseEvent, index: number) => {
-        e.preventDefault();
+    const scrollTo = (index: number) => {
         setActivePageIndex(index);
         const content = document.querySelectorAll('.page')[index];
         if (content) content.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    }
+
+    const handleMenuClick = (e: React.MouseEvent, index: number) => {
+        if (e) e.preventDefault();
+        scrollTo(index);
     }
 
     return (
@@ -23,25 +28,25 @@ export const Sidebar: FunctionComponent = () => {
 
             <ul className="menu">
                 <li>
-                    <a href="#home" onClick={(e) => scrollTo(e, 0)} className={`menu-link${activePageIndex === 0 ? ' active' : ''}`}>
+                    <a href="#home" onClick={(e) => handleMenuClick(e, 0)} className={`menu-link${activePageIndex === 0 ? ' active' : ''}`}>
                         <i className="fas fa-home"></i>
                         Accueil
                     </a>
                 </li>
                 <li>
-                    <a href="#showcases" onClick={(e) => scrollTo(e, 1)} className={`menu-link${activePageIndex === 1 ? ' active' : ''}`}>
+                    <a href="#showcases" onClick={(e) => handleMenuClick(e, 1)} className={`menu-link${activePageIndex === 1 ? ' active' : ''}`}>
                         <i className="fas fa-book-open"></i>
                         Portfolio
                     </a>
                 </li>
                 <li>
-                    <a href="#about" onClick={(e) => scrollTo(e, 2)} className={`menu-link${activePageIndex === 2 ? ' active' : ''}`}>
+                    <a href="#about" onClick={(e) => handleMenuClick(e, 2)} className={`menu-link${activePageIndex === 2 ? ' active' : ''}`}>
                         <i className="fas fa-user"></i>
                         A propos
                     </a>
                 </li>
                 <li>
-                    <a href="#resume" onClick={(e) => scrollTo(e, 3)} className={`menu-link${activePageIndex === 3 ? ' active' : ''}`}>
+                    <a href="#resume" onClick={(e) => handleMenuClick(e, 3)} className={`menu-link${activePageIndex === 3 ? ' active' : ''}`}>
                         <i className="fas fa-file"></i>
                         CV
                     </a>

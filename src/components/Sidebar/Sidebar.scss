@@ -38,7 +38,7 @@
 			padding: 10px 0;
 			cursor: pointer;
 			color: rgba(0, 0, 0, 0.4);
-			transition: 0.3s;
+			transition: color 0.3s;
 			outline: none;
 			display: flex;
 			align-items: center;
@@ -53,6 +53,7 @@
 
 			&:hover,
 			&.active {
+				font-weight: 600;
 				color: #000;
 			}
 		}
