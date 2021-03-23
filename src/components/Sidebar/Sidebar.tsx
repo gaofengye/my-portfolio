@@ -55,7 +55,9 @@ export const Sidebar: FunctionComponent = () => {
 
             <div className="description">
                 Fait avec React 17<br/>
-                en typescript et sass
+                en typescript et sass<br/>
+                <br/>
+                Projet disponible sur <a href="https://github.com/gaofengye/my-portfolio" rel="noreferrer" target="_blank">Github</a>
             </div>
             
             <a href="mailto:ye.gaofeng@gmail.com" className="contact-link">ye.gaofeng@gmail.com</a>
