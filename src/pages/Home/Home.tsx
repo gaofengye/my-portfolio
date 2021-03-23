@@ -11,16 +11,18 @@ const Home: FunctionComponent = () => {
             const textCursor = dom.querySelector('.cursor');
             if (textDOM && textCursor) {
                 const textToType = dom.getAttribute('data-text') || '';
-                let i = 0;
-                const typingTimer = setInterval(() => {
-                    i++;
-                    if (i > textToType.length) { 
-                        clearInterval(typingTimer); 
-                        textCursor.classList.add('animate');
-                        return;
-                    }
-                    textDOM.textContent = textToType?.substr(0, i);
-                }, 250);
+                const typeWriter = (index: number) => {
+                    setTimeout(() => {
+                        if (index > textToType.length + 1) {  
+                            textCursor.classList.add('animate');
+                            return;
+                        }
+                        textDOM.textContent = textToType?.substring(0, index);
+                        typeWriter(index + 1);
+                    }, 200);
+                }
+
+                typeWriter(0);
             }
         }
     }, [])
