@@ -4,6 +4,8 @@ import App from './App';
 import './styles/layout.scss';
 import './index.scss';
 
+window.screen.orientation.lock('portrait');
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
