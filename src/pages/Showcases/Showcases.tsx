@@ -27,7 +27,8 @@ const Showcases: FunctionComponent = () => {
                         setWrapperSize={true}
                         breakpoints={{
                             480: {
-                                slidesPerView: 1
+                                slidesPerView: 1,
+                                slidesPerGroup: 1
                             },
                             768: {
                                 slidesPerView: 2,

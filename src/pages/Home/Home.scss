@@ -7,9 +7,17 @@
 	flex-direction: column;
 	justify-content: center;
 
+	@media (max-width: $bp-mobile) {
+		padding-left: 50px;
+	}
+
 	.name {
 		font-size: rem(50);
 		margin-bottom: 8px;
+
+		@media (max-width: $bp-mobile) {
+			font-size: rem(38);
+		}
 	}
 
 	.typed-text {

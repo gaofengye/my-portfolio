@@ -1,7 +1,14 @@
+@import "./mixin";
+
 #sidebar {
 	position: fixed;
 	top: 0;
 	left: 0;
+
+	@media (max-width: $bp-tablet) {
+		width: 100%;
+		height: 95px;
+	}
 }
 
 #content {
@@ -10,6 +17,13 @@
 	left: 260px;
 	height: 100%;
 	width: calc(100% - 260px);
+
+	@media (max-width: $bp-tablet) {
+		height: calc(100% - 95px);
+		width: 100%;
+		left: 0;
+		top: 95px;
+	}
 }
 
 #background {
@@ -17,4 +31,11 @@
 	top: 0;
 	left: 260px;
 	width: calc(100% - 260px);
+
+	@media (max-width: $bp-tablet) {
+		width: 100%;
+		height: calc(100% - 95px);
+		left: 0;
+		top: 95px;
+	}
 }
