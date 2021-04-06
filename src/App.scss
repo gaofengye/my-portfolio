@@ -67,8 +67,12 @@
 }
 
 .no-landscape {
-	display: flex;
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
+	display: none;
+
+	@media (max-width: $bp-tablet) and (orientation: landscape) {
+		display: flex;
+	}
 }
